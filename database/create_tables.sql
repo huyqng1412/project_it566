@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `project` (
     `project_id` INT(15) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     `project_name` VARCHAR(30) NOT NULL,
     `start_date` DATE NOT NULL,
+    `total_fte` FLOAT NOT NULL,
     `project_dscr` VARCHAR(250) NOT NULL
 ) AUTO_INCREMENT = 1000;
 
