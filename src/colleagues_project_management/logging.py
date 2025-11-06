@@ -2,7 +2,7 @@
 
 import logging
 import logging.handlers
-from application_name.settings import Settings
+from colleagues_project_management.settings import Settings
 import os
 
 class LoggingService():
