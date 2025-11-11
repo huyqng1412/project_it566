@@ -5,6 +5,7 @@ from mysql import connector
 from mysql.connector.pooling import (MySQLConnectionPool)
 import inspect
 import json
+from typing import List
 
 class MySQLPersistenceWrapper(ApplicationBase):
 	"""Implements the MySQLPersistenceWrapper class."""
@@ -34,13 +35,30 @@ class MySQLPersistenceWrapper(ApplicationBase):
 		
 
 		# SQL String Constants
-
+		self.SELECT_ALL_EMPLOYEES = \
+			f'SELECT employee_id, first_name, last_name, birthday, gender ' \
+			f'FROM employee'
 
 
 
 
 	# MySQLPersistenceWrapper Methods
+	def select_all_employees(self)->List:
+		"""Returns a list of all employee rows."""
+		cursor = None
+		results = None
+		try:
+			connection = self._connection_pool.get_connection()
+			with connection:
+				cursor = connection.cursor()
+				with cursor:
+					cursor.execute(self.SELECT_ALL_EMPLOYEES)
+					results = cursor.fetchall()
 
+			return results
+		
+		except Exception as e:
+			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
 
 
 

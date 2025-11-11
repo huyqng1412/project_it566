@@ -3,7 +3,7 @@
 import json
 from argparse import ArgumentParser
 from colleagues_project_management.presentation_layer.user_interface import UserInterface
-
+from colleagues_project_management.persistence_layer.mysql_persistence_wrapper import MySQLPersistenceWrapper
 
 
 def main():
@@ -15,9 +15,12 @@ def main():
 		with open(args.configfile, 'r') as f:
 			config = json.loads(f.read())
 
-	ui = UserInterface(config)
-	ui.start()
-			
+	#ui = UserInterface(config)
+	#ui.start()
+
+	db = MySQLPersistenceWrapper(config)
+	results = db.select_all_employees()
+	print(results)	
 		
 
 
