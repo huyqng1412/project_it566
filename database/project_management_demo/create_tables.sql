@@ -33,8 +33,7 @@ CREATE TABLE IF NOT EXISTS `project` (
     `project_name` VARCHAR(30) NOT NULL,
     `total_hours` FLOAT NOT NULL,
     `total_fte` FLOAT NOT NULL,
-    `status` VARCHAR(20) NOT NULL CHECK (`status` IN ('Done', 'In Progress')),
-    `project_dscr` VARCHAR(250) NOT NULL
+    `status` VARCHAR(20) NOT NULL CHECK (`status` IN ('Done', 'In Progress'))
 ) AUTO_INCREMENT = 1000;
 
 /* Drop the table 'project_allocations' if it already exists */ 
