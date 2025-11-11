@@ -111,3 +111,13 @@ DEBUG:MySQLPersistenceWrapper:2025-11-10 21:21:28,164:Creating connection pool..
 DEBUG:MySQLPersistenceWrapper:2025-11-10 21:21:28,319:_initialize_database_connection_pool: Connection pool successfully created!
 DEBUG:AppServices:2025-11-10 21:21:28,319:__init__:It works!
 DEBUG:UserInterface:2025-11-10 21:21:28,319:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-10 21:23:02,714:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-10 21:23:02,715:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
+DEBUG:MySQLPersistenceWrapper:2025-11-10 21:23:02,715:Creating connection pool...
+DEBUG:MySQLPersistenceWrapper:2025-11-10 21:23:02,862:_initialize_database_connection_pool: Connection pool successfully created!
+DEBUG:AppServices:2025-11-10 21:23:02,862:__init__:It works!
+DEBUG:UserInterface:2025-11-10 21:23:02,863:__init__:It works!
+ERROR:UserInterface:2025-11-10 21:23:05,795:list_employees: It works!
+ERROR:UserInterface:2025-11-10 21:23:13,910:list_employees: It works!
+ERROR:UserInterface:2025-11-10 21:24:31,254:list_employees: It works!
+ERROR:UserInterface:2025-11-10 21:24:45,540:list_employees: It works!
