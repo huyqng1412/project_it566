@@ -39,7 +39,7 @@ class UserInterface(ApplicationBase):
         try: 
             results = self.app_services.get_all_employees()
             table = PrettyTable()
-            table.field_names = ['ID', 'First Name', 'Middle Name', 'Last Name']
+            table.field_names = ['ID', 'First Name', 'Last Name', 'Birthday']
             for row in results:
                table.add_row([row[0], row[1], row[2], row[3]])
             print(table)
@@ -53,4 +53,4 @@ class UserInterface(ApplicationBase):
             self.display_menu()
             self.process_menu_choice()
 
-            #self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: User interface started!')
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: User interface started!')

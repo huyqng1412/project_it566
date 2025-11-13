@@ -1,123 +1,26 @@
-DEBUG:UserInterface:2025-11-10 10:00:10,008:__init__:It works!
-DEBUG:UserInterface:2025-11-10 10:00:10,009:start: User interface started!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 13:18:35,715:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 13:18:35,716:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 13:18:35,716:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 13:18:35,783:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 13:18:35,784:__init__:It works!
-DEBUG:UserInterface:2025-11-10 13:18:35,784:__init__:It works!
-DEBUG:UserInterface:2025-11-10 13:18:35,784:start: User interface started!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 19:26:31,197:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 19:26:31,199:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 19:26:31,200:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 19:26:31,354:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 19:26:31,355:__init__:It works!
-DEBUG:UserInterface:2025-11-10 19:26:31,355:__init__:It works!
-DEBUG:UserInterface:2025-11-10 19:26:31,356:start: User interface started!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 19:46:21,979:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 19:46:21,979:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 19:46:21,980:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 19:46:22,126:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 19:46:22,127:__init__:It works!
-DEBUG:UserInterface:2025-11-10 19:46:22,128:__init__:It works!
-DEBUG:UserInterface:2025-11-10 19:46:22,128:start: User interface started!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:27:22,462:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:27:22,462:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:27:22,463:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:27:22,613:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:41:17,620:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:41:17,621:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:41:17,621:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:41:17,784:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 20:41:17,785:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:44:51,480:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:44:51,481:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:44:51,482:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 20:44:51,636:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 20:44:51,637:__init__:It works!
-ERROR:AppServices:2025-11-10 20:44:51,650:get_all_employees_as_json: It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:07:34,721:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:07:34,722:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:07:34,723:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:07:34,863:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:07:34,864:__init__:It works!
-DEBUG:UserInterface:2025-11-10 21:07:34,864:__init__:It works!
-ERROR:UserInterface:2025-11-10 21:07:34,865:start: User interface started!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:07:34,866:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:07:34,867:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:07:34,867:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:07:34,900:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:07:34,901:__init__:It works!
-ERROR:AppServices:2025-11-10 21:07:34,914:get_all_employees_as_json: It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:08:05,226:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:08:05,227:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:08:05,227:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:08:05,376:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:08:05,376:__init__:It works!
-ERROR:AppServices:2025-11-10 21:08:05,389:get_all_employees_as_json: It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:08:24,541:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:08:24,541:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:08:24,542:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:08:24,683:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:08:24,683:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:09:46,490:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:09:46,491:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:09:46,492:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:09:46,656:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:09:46,657:__init__:It works!
-ERROR:AppServices:2025-11-10 21:09:46,668:get_all_employees_as_json: It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:12:46,664:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:12:46,665:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:12:46,665:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:12:46,816:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:12:46,816:__init__:It works!
-DEBUG:UserInterface:2025-11-10 21:12:46,817:__init__:It works!
-ERROR:UserInterface:2025-11-10 21:12:46,817:start: User interface started!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:12:46,819:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:12:46,819:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:12:46,820:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:12:46,854:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:12:46,855:__init__:It works!
-ERROR:AppServices:2025-11-10 21:12:46,864:get_all_employees_as_json: It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:13:28,858:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:13:28,859:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:13:28,859:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:13:29,019:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:13:29,019:__init__:It works!
-DEBUG:UserInterface:2025-11-10 21:13:29,020:__init__:It works!
-ERROR:UserInterface:2025-11-10 21:13:29,020:start: User interface started!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:13:29,022:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:13:29,024:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:13:29,024:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:13:29,061:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:13:29,062:__init__:It works!
-ERROR:AppServices:2025-11-10 21:13:29,072:get_all_employees_as_json: It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:18:56,485:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:18:56,486:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:18:56,486:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:18:56,631:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:18:56,632:__init__:It works!
-DEBUG:UserInterface:2025-11-10 21:18:56,633:__init__:It works!
-ERROR:UserInterface:2025-11-10 21:18:56,633:start: User interface started!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:18:56,635:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:18:56,635:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:18:56,636:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:18:56,667:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:18:56,667:__init__:It works!
-ERROR:AppServices:2025-11-10 21:18:56,674:get_all_employees_as_json: It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:21:28,163:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:21:28,163:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:21:28,164:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:21:28,319:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:21:28,319:__init__:It works!
-DEBUG:UserInterface:2025-11-10 21:21:28,319:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:23:02,714:__init__:It works!
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:23:02,715:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:23:02,715:Creating connection pool...
-DEBUG:MySQLPersistenceWrapper:2025-11-10 21:23:02,862:_initialize_database_connection_pool: Connection pool successfully created!
-DEBUG:AppServices:2025-11-10 21:23:02,862:__init__:It works!
-DEBUG:UserInterface:2025-11-10 21:23:02,863:__init__:It works!
-ERROR:UserInterface:2025-11-10 21:23:05,795:list_employees: It works!
-ERROR:UserInterface:2025-11-10 21:23:13,910:list_employees: It works!
-ERROR:UserInterface:2025-11-10 21:24:31,254:list_employees: It works!
-ERROR:UserInterface:2025-11-10 21:24:45,540:list_employees: It works!
+DEBUG:UserInterface:2025-11-13 16:01:37,693:__init__:It works!
+ERROR:UserInterface:2025-11-13 16:01:39,525:list_employees: It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-13 16:07:06,698:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-13 16:07:06,699:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
+DEBUG:MySQLPersistenceWrapper:2025-11-13 16:07:06,699:Creating connection pool...
+ERROR:MySQLPersistenceWrapper:2025-11-13 16:07:08,803:_initialize_database_connection_pool: Problem creating connection pool: 2003: Can't connect to MySQL server on 'localhost:3306' (Errno 10061: No connection could be made because the target machine actively refused it)
+ERROR:MySQLPersistenceWrapper:2025-11-13 16:07:08,807:_initialize_database_connection_pool: Check DB cnfg:
+{"pool": {"name": "colleagues_project_management_db_bool", "size": 10, "reset_session": true, "use_pure": true}, "connection": {"config": {"database": "project_management", "user": "project_management_user", "host": "localhost", "port": 3306}}}
+DEBUG:AppServices:2025-11-13 16:07:08,808:__init__:It works!
+DEBUG:UserInterface:2025-11-13 16:07:08,808:__init__:It works!
+ERROR:UserInterface:2025-11-13 16:07:12,603:list_employees: It works!
+ERROR:UserInterface:2025-11-13 16:07:12,603:start: User interface started!
+DEBUG:MySQLPersistenceWrapper:2025-11-13 16:10:13,821:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-13 16:10:13,821:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
+DEBUG:MySQLPersistenceWrapper:2025-11-13 16:10:13,822:Creating connection pool...
+ERROR:MySQLPersistenceWrapper:2025-11-13 16:10:15,928:_initialize_database_connection_pool: Problem creating connection pool: 2003: Can't connect to MySQL server on 'localhost:3306' (Errno 10061: No connection could be made because the target machine actively refused it)
+ERROR:MySQLPersistenceWrapper:2025-11-13 16:10:15,928:_initialize_database_connection_pool: Check DB cnfg:
+{"pool": {"name": "colleagues_project_management_db_bool", "size": 10, "reset_session": true, "use_pure": true}, "connection": {"config": {"database": "project_management", "user": "project_management_user", "host": "localhost", "port": 3306}}}
+DEBUG:AppServices:2025-11-13 16:10:15,929:__init__:It works!
+DEBUG:UserInterface:2025-11-13 16:10:15,929:__init__:It works!
+ERROR:UserInterface:2025-11-13 16:10:16,967:list_employees: It works!
+ERROR:UserInterface:2025-11-13 16:10:16,967:start: User interface started!
+ERROR:UserInterface:2025-11-13 16:10:18,467:list_employees: It works!
+ERROR:UserInterface:2025-11-13 16:10:18,468:start: User interface started!
+ERROR:UserInterface:2025-11-13 16:10:19,260:start: User interface started!
+ERROR:UserInterface:2025-11-13 16:10:19,843:start: User interface started!
