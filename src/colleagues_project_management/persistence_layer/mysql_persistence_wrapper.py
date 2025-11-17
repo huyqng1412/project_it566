@@ -39,7 +39,8 @@ class MySQLPersistenceWrapper(ApplicationBase):
 			f'SELECT employee_id, first_name, last_name, birthday, gender ' \
 			f'FROM employee'
 
-
+		self.SELECT_ALL_PROJECTS = \
+			f''
 
 
 	# MySQLPersistenceWrapper Methods

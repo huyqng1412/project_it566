@@ -24,6 +24,7 @@ class UserInterface(ApplicationBase):
         print(f'\n\n\t\tProject Management Application')
         print()
         print(f'\t1.List employees')
+        print(f'\t2.List projects')
         print(f'\t6.Exit')
 
     # Choices for menu selections. #
@@ -31,22 +32,26 @@ class UserInterface(ApplicationBase):
         menu_choice = input("\tSelection:")
         match menu_choice[0]:
             case '1':self.list_employees()
+            case '2':self.list_projects()
             case '6':sys.exit
             case _: print(f'Invalid menu choice item: {menu_choice[0]}')
 
     # List all the employees in a table format. #
     def list_employees(self):
         try: 
-            results = self.app_services.get_all_employees()
+            results = self.DB.get_all_employees()
             table = PrettyTable()
-            table.field_names = ['ID', 'First Name', 'Last Name', 'Birthday']
+            table.field_names = ['ID', 'First Name', 'Last Name', 'Birthday', 'Gender']
             for row in results:
-               table.add_row([row[0], row[1], row[2], row[3]])
+               table.add_row([row[0], row[1], row[2], row[3], row[4]])
             print(table)
 
         except Exception as e:
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
+    def list_projects(self):
+        try:
+            proj_results = self.DB.
     def start(self):
         """Start main user interface."""
         while True:

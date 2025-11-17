@@ -15,6 +15,10 @@ def main():
 		with open(args.configfile, 'r') as f:
 			config = json.loads(f.read())
 
+		#service_layer = AppServices(config)
+		#employees_list = service_layer.get_all_employees_as_json()
+		#print(employees_list)
+	
 	ui = UserInterface(config)
 	ui.start()
 
@@ -38,7 +42,7 @@ def configure_and_parse_commandline_arguments():
 	parser = ArgumentParser(
 	prog='main.py',
 	description='Start the application with a configuration file.',
-	epilog='POC: Your Name | your@email')
+	epilog='POC: Huy Nguyen | huyqng1412@gmail.com')
 
 	parser.add_argument('-c','--configfile',
 					help="Configuration file to load.",
