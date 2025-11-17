@@ -51,3 +51,11 @@ DEBUG:AppServices:2025-11-17 16:14:16,180:__init__:It works!
 DEBUG:UserInterface:2025-11-17 16:14:16,181:__init__:It works!
 ERROR:UserInterface:2025-11-17 16:14:17,834:list_employees: It works!
 ERROR:UserInterface:2025-11-17 16:14:17,834:start: User interface started!
+DEBUG:MySQLPersistenceWrapper:2025-11-17 16:16:24,444:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-17 16:16:24,444:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
+DEBUG:MySQLPersistenceWrapper:2025-11-17 16:16:24,444:Creating connection pool...
+DEBUG:MySQLPersistenceWrapper:2025-11-17 16:16:24,520:_initialize_database_connection_pool: Connection pool successfully created!
+DEBUG:AppServices:2025-11-17 16:16:24,521:__init__:It works!
+DEBUG:UserInterface:2025-11-17 16:16:24,521:__init__:It works!
+ERROR:UserInterface:2025-11-17 16:16:25,426:start: User interface started!
+ERROR:UserInterface:2025-11-17 16:16:30,789:start: User interface started!
