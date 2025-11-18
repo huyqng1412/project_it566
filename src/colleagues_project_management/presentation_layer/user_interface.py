@@ -25,6 +25,8 @@ class UserInterface(ApplicationBase):
         print()
         print(f'\t1.List employees')
         print(f'\t2.List projects')
+        print(f'\t3.List project assignments')
+        print(f'\t4.List all employees and assigned projects')
         print(f'\t6.Exit')
 
     # Choices for menu selections. #
@@ -33,7 +35,9 @@ class UserInterface(ApplicationBase):
         match menu_choice[0]:
             case '1':self.list_employees()
             case '2':self.list_projects()
-            case '6':sys.exit
+            case '3':self.list_assignments()
+            case '4':self.list_employees_assigned_projects()
+            case '6':sys.exit()
             case _: print(f'Invalid menu choice item: {menu_choice[0]}')
 
     # List all the employees in a table format. #
@@ -41,7 +45,7 @@ class UserInterface(ApplicationBase):
         try: 
             results = self.DB.get_all_employees()
             table = PrettyTable()
-            table.field_names = ['ID', 'First Name', 'Last Name', 'Birthday', 'Gender']
+            table.field_names = ['Employee ID', 'First Name', 'Last Name', 'Birthday', 'Gender']
             for row in results:
                table.add_row([row[0], row[1], row[2], row[3], row[4]])
             print(table)
@@ -51,7 +55,39 @@ class UserInterface(ApplicationBase):
 
     def list_projects(self):
         try:
-            proj_results = self.DB.
+            results1 = self.DB.get_all_projects()
+            table = PrettyTable()
+            table.field_names = ['Project ID', 'Project Name', 'Total Hours', 'Total FTE', 'Status']
+            for row in results1:
+               table.add_row([row[0], row[1], row[2], row[3], row[4]])
+            print(table)
+
+        except Exception as e:
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
+    def list_assignments(self):
+        try:
+            results2 = self.DB.get_all_assignments()
+            table = PrettyTable()
+            table.field_names = ['Project Name', 'Number of Employees']
+            for row in results2:
+                table.add_row([row[0], row[1]])
+            print(table)
+
+        except Exception as e:
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
+    def list_employees_assigned_projects(self):
+        try:
+            results3 = self.DB.get_employees_assigned_projects()
+            table = PrettyTable()
+            table.field_names = ['First Name', 'Last Name', 'Assigned Projects']
+            for row in results3:
+                table.add_row([row[0], row[1], row[2]])
+            print(table)
+        except Exception as e: 
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
     def start(self):
         """Start main user interface."""
         while True:

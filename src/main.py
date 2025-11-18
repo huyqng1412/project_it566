@@ -30,12 +30,28 @@ def main():
 	### Returns all employees in rows that looks cleaner! ###
 	app_services = AppServices(config)
 	results = app_services.get_all_employees()
-
+	results1 = app_services.get_all_projects()
+	results2 = app_services.get_all_assignments()
+	results3 = app_services.get_employees_assigned_projects()
 	for row in results:
 		print(f'{row[0]} {row[1]} {row[2]} {row[3]} {row[4]}')
 		
-	print(f'{app_services.get_all_employees_as_json()}')
+		print(f'{app_services.get_all_employees_as_json()}')
 
+	for row in results1:
+		print(f'{row[0]} {row[1]} {row[2]} {row[3]} {row[4]}')
+
+		print(f'{app_services.get_all_projects_as_json()}')
+	
+	for row in results2:
+		print(f'{row[0]} {row[1]}')
+
+		print(f'{app_services.get_all_assignments_as_json()}')
+
+	for row in results3:
+		print(f'{row[0]} {row[1]} {row[2]}')
+
+		print(f'{app_services.get_employees_assigned_projects_as_json()}')
 
 def configure_and_parse_commandline_arguments():
 	"""Configure and parse command-line arguments."""

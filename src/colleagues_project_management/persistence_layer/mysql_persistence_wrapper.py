@@ -40,8 +40,26 @@ class MySQLPersistenceWrapper(ApplicationBase):
 			f'FROM employee'
 
 		self.SELECT_ALL_PROJECTS = \
-			f''
-
+			f'SELECT project_id, project_name, total_hours, total_fte, status ' \
+			f'FROM project'
+		
+		self.SELECT_ASSIGNMENTS = \
+			f'SELECT p.project_name, COUNT(e.employee_id)' \
+			f'FROM project_allocations pa ' \
+			f'INNER JOIN project p ON pa.project_id = p.project_id ' \
+			f'INNER JOIN employee e ON pa.employee_id = e.employee_id ' \
+			f'GROUP BY p.project_name ' \
+			f'ORDER BY p.project_name' 
+		
+		self.SELECT_EMPLOYEES_ASSIGNED_PROJECTS = \
+			f"SELECT e.first_name, e.last_name, GROUP_CONCAT('   • ', p.project_name SEPARATOR '\n\n') " \
+			f"FROM project_allocations pa " \
+			f"JOIN employee e ON e.employee_id = pa.employee_id " \
+			f"JOIN project p ON p.project_id = pa.project_id " \
+			f"GROUP BY e.employee_id " \
+			f"ORDER BY e.employee_id"
+		
+		
 
 	# MySQLPersistenceWrapper Methods
 	def select_all_employees(self)->List:
@@ -61,7 +79,58 @@ class MySQLPersistenceWrapper(ApplicationBase):
 		except Exception as e:
 			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
 
+	
+	def select_all_projects(self)->List:
+		"""Returns a list of all project rows."""
+		cursor = None
+		results = None
+		try:
+			connection = self._connection_pool.get_connection()
+			with connection:
+				cursor = connection.cursor()
+				with cursor:
+					cursor.execute(self.SELECT_ALL_PROJECTS)
+					results = cursor.fetchall()
 
+			return results
+		
+		except Exception as e:
+			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
+
+	def select_assignments(self)->List:
+		"""Returns a list of all project allocations rows."""
+		cursor = None
+		results = None
+		try:
+			connection = self._connection_pool.get_connection()
+			with connection:
+				cursor = connection.cursor()
+				with cursor:
+					cursor.execute(self.SELECT_ASSIGNMENTS)
+					results = cursor.fetchall()
+
+			return results
+		
+		except Exception as e:
+			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
+
+	
+	def select_employees_assigned_projects(self)->List:
+		"""Returns a list of all employees and their assigned projects rows."""
+		cursor = None
+		results = None
+		try:
+			connection = self._connection_pool.get_connection()
+			with connection:
+				cursor = connection.cursor()
+				with cursor:
+					cursor.execute(self.SELECT_EMPLOYEES_ASSIGNED_PROJECTS)
+					results = cursor.fetchall()
+
+			return results
+		
+		except Exception as e:
+			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
 
 
 		##### Private Utility Methods #####

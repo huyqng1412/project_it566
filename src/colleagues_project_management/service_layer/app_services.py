@@ -25,11 +25,64 @@ class AppServices(ApplicationBase):
         except Exception as e:
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
+    def get_all_projects(self)->list:
+        """Returns a list of projects from the persistence layer."""
+        try:
+            results = self.DB.select_all_projects()
+            return results 
+         
+        except Exception as e:
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
+    def get_all_assignments(self)->list:
+        """Returns a list of project allcoations from the persistence layer."""
+        try:
+            results = self.DB.select_assignments()
+            return results 
+         
+        except Exception as e:
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
+    def get_employees_assigned_projects(self)->list:
+        """Returns a list of all employees and assigned projects from the persistence layer."""
+        try:
+            results = self.DB.select_employees_assigned_projects()
+            return results 
+         
+        except Exception as e:
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
     def get_all_employees_as_json(self)->str:
             """Returns a list of employees from the persistence layer in JSON."""
             try:
                 results = self.DB.select_all_employees()
+                return json.dumps(results)
+
+            except Exception as e:
+                self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
+    def get_all_projects_as_json(self)->str:
+            """Returns a list of employees from the persistence layer in JSON."""
+            try:
+                results = self.DB.select_all_projects()
+                return json.dumps(results)
+
+            except Exception as e:
+                self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
+    def get_all_assignments_as_json(self)->str:
+            """Returns a list of project allocations from the persistence layer in JSON."""
+            try:
+                results = self.DB.select_assignments()
+                return json.dumps(results)
+
+            except Exception as e:
+                self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
+    def get_employees_assigned_projects_as_json(self)->str:
+            """Returns a list of all employees and assigned projects from the persistence layer in JSON."""
+            try:
+                results = self.DB.select_employees_assigned_projects()
                 return json.dumps(results)
 
             except Exception as e:
