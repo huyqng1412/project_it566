@@ -6,6 +6,7 @@ import inspect
 import json
 import sys 
 from prettytable import PrettyTable
+from datetime import datetime
 
 
 class UserInterface(ApplicationBase):
@@ -27,6 +28,7 @@ class UserInterface(ApplicationBase):
         print(f'\t2.List projects')
         print(f'\t3.List project assignments')
         print(f'\t4.List all employees and assigned projects')
+        print(f'\t5.Add new employee')
         print(f'\t6.Exit')
 
     # Choices for menu selections. #
@@ -37,6 +39,7 @@ class UserInterface(ApplicationBase):
             case '2':self.list_projects()
             case '3':self.list_assignments()
             case '4':self.list_employees_assigned_projects()
+            case '5':self.add_employee()
             case '6':sys.exit()
             case _: print(f'Invalid menu choice item: {menu_choice[0]}')
 
@@ -84,10 +87,29 @@ class UserInterface(ApplicationBase):
             table.field_names = ['First Name', 'Last Name', 'Assigned Projects']
             for row in results3:
                 table.add_row([row[0], row[1], row[2]])
+                table.add_row(["", "", ""])
+                table.add_row(["", "", ""])
             print(table)
         except Exception as e: 
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
+    def add_employee(self)->None:
+        """Add employee"""
+        print("\n\tAdd Employee...")
+        employee = 
+        try: 
+            employee.first_name = input('First Name: ')
+            employee.last_name = input('Last Name: ')
+            birthday_input = input('Birthday (mm/dd/yyy): ')
+            employee.birthday = datetime.strptime(birthday_input, '%m/%d/%Y')
+            employee.gender = input('Gender (M/F): ')
+            employee = self.DB.create_employee(employee=employee)
+            print(f'New employee id: {employee.id}')
+
+
+        except Exception as e:
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: ' \
+                                f'{e}')
     def start(self):
         """Start main user interface."""
         while True:

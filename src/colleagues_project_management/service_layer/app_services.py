@@ -87,3 +87,12 @@ class AppServices(ApplicationBase):
 
             except Exception as e:
                 self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
+    def create_employee(self, employee)->list:
+        """Create a new employee in the database"""
+        self._logger.log_debug(f'In {inspect.currentframe().f_code.co_name}()...')
+        try:
+            results = self.DB.create_employee(employee)
+            return results
+        except Exception as e: 
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}:{e}')

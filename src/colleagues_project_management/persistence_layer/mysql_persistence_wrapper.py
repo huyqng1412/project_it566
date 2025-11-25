@@ -52,13 +52,27 @@ class MySQLPersistenceWrapper(ApplicationBase):
 			f'ORDER BY p.project_name' 
 		
 		self.SELECT_EMPLOYEES_ASSIGNED_PROJECTS = \
-			f"SELECT e.first_name, e.last_name, GROUP_CONCAT('   • ', p.project_name SEPARATOR '\n\n') " \
+			f"SELECT e.first_name, e.last_name, GROUP_CONCAT('   • ', p.project_name SEPARATOR '\n') " \
 			f"FROM project_allocations pa " \
-			f"JOIN employee e ON e.employee_id = pa.employee_id " \
-			f"JOIN project p ON p.project_id = pa.project_id " \
+			f"INNER JOIN employee e ON e.employee_id = pa.employee_id " \
+			f"INNER JOIN project p ON p.project_id = pa.project_id " \
 			f"GROUP BY e.employee_id " \
 			f"ORDER BY e.employee_id"
 		
+		self.INSERT_EMPLOYEE = \
+			f"INSERT INTO employee " \
+			f"(first_name, last_name, birthday, gender) " \
+			f"VALUES(%s, %s, %s, %s)"
+
+		self.INSERT_PROJECT = \
+			f"INSERT INTO project " \
+			f"(project_name, total_hours, total_fte, status) " \
+			f"VALUES(%s, %s, %s, %s)"
+		
+		self.INSERT_ALLOCATIONS = \
+			f"INSERT INTO project_allocations " \
+			f"(project_id, employee_id, assigned_fte) " \
+			f"VALUES(%s, %s, %s)"
 		
 
 	# MySQLPersistenceWrapper Methods
@@ -130,6 +144,28 @@ class MySQLPersistenceWrapper(ApplicationBase):
 			return results
 		
 		except Exception as e:
+			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
+
+
+
+	def create_employee(self, employee)->List:
+		"""Create a new record in the employees table"""
+		cursor = None
+		try: 
+			connection = self._connection_pool.get_connection()
+			with connection:
+				cursor = connection.cursor()
+				with cursor:
+					cursor.execute(self.INSERT_EMPLOYEE,
+						([employee.first_name, employee.last_name, employee.birthday, employee.gender]))
+					connection.commit()
+					self._logger.log_debug(f'Updated {cursor.rowcount} row.')
+					self._logger.log_debug(f'Last Row ID: {cursor.lastrowid}.')
+					employee.id = cursor.lastrowid
+
+			return employee
+		
+		except Exception as e: 
 			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
 
 
