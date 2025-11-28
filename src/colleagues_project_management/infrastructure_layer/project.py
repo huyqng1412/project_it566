@@ -3,4 +3,6 @@ import json
 class Project():
     """"""
     def __init__(self)->None:
-        self.title
+        self.project_name:str = ""
+        self.description:str = ""
+        s

@@ -148,22 +148,23 @@ class MySQLPersistenceWrapper(ApplicationBase):
 
 
 
-	def create_employee(self, employee)->List:
+	def create_employee(self)->List:
 		"""Create a new record in the employees table"""
 		cursor = None
+		results = None
 		try: 
 			connection = self._connection_pool.get_connection()
 			with connection:
 				cursor = connection.cursor()
 				with cursor:
-					cursor.execute(self.INSERT_EMPLOYEE,
-						([employee.first_name, employee.last_name, employee.birthday, employee.gender]))
-					connection.commit()
-					self._logger.log_debug(f'Updated {cursor.rowcount} row.')
-					self._logger.log_debug(f'Last Row ID: {cursor.lastrowid}.')
-					employee.id = cursor.lastrowid
-
-			return employee
+					cursor.execute(self.INSERT_EMPLOYEE)
+					results = cursor.fetchall()
+					#connection.commit()
+					#self._logger.log_debug(f'Updated {cursor.rowcount} row.')
+					#self._logger.log_debug(f'Last Row ID: {cursor.lastrowid}.')
+					#employee.id = cursor.lastrowid
+			return results
+			#return employee
 		
 		except Exception as e: 
 			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')

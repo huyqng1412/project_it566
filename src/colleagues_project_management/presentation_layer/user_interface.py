@@ -96,15 +96,13 @@ class UserInterface(ApplicationBase):
     def add_employee(self)->None:
         """Add employee"""
         print("\n\tAdd Employee...")
-        employee = 
         try: 
+            employee = self.DB.create_employee()
             employee.first_name = input('First Name: ')
             employee.last_name = input('Last Name: ')
             birthday_input = input('Birthday (mm/dd/yyy): ')
             employee.birthday = datetime.strptime(birthday_input, '%m/%d/%Y')
             employee.gender = input('Gender (M/F): ')
-            employee = self.DB.create_employee(employee=employee)
-            print(f'New employee id: {employee.id}')
 
 
         except Exception as e:
