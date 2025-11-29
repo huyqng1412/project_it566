@@ -191,6 +191,28 @@ class MySQLPersistenceWrapper(ApplicationBase):
 		except Exception as e: 
 			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
 
+		
+	def create_allocation(self, project_id, employee_id, assigned_fte):
+		"""Create a new record in the project allocations table"""
+		cursor = None
+
+		try:
+			connection = self._connection_pool.get_connection()
+			with connection:
+				cursor = connection.cursor()
+				with cursor:
+					cursor.execute(
+						self.INSERT_ALLOCATIONS,
+						(project_id, employee_id, assigned_fte)
+					)
+					connection.commit()
+					new_allocation = cursor.lastrowid
+			return new_allocation
+
+		except Exception as e: 
+			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
+
+
 		##### Private Utility Methods #####
 
 	def _initialize_database_connection_pool(self, config:dict)->MySQLConnectionPool:

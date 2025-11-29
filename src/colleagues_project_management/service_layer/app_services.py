@@ -115,3 +115,13 @@ class AppServices(ApplicationBase):
             return new_project
         except Exception as e: 
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}:{e}')
+
+
+    def create_allocation(self, project_id, employee_id, assigned_fte):
+        """Create new assignments for employees in the database"""
+        self._logger.log_debug((f'In {inspect.currentframe().f_code.co_name}()...'))
+        try:
+            new_allocation = self.DB.create_allocation(project_id, employee_id, assigned_fte)
+            return new_allocation
+        except Exception as e: 
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}:{e}')

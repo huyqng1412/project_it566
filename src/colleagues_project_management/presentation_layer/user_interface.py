@@ -159,7 +159,39 @@ class UserInterface(ApplicationBase):
                 #print('Error! Try again!')
                 #continue
 
-    
+    def add_allocation(self)->None:
+        """Add allocation"""
+        while True:
+            print("\n\tAdd an employee assignment...")
+            try:
+                project_id_input = input("Project ID: ").strip()
+                try: 
+                    project_id = int(project_id_input)
+                except ValueError:
+                    print("Error! Project ID must be a number!")
+                    continue
+                
+                employee_id_input = input("Employee ID: ").strip()
+                try:
+                    employee_id = int(employee_id_input)
+                except ValueError:
+                    print("Error! Employee ID must be a number!")
+                    continue
+
+                assigned_fte_input = input("FTE: ")
+                try:
+                    assigned_fte = float(assigned_fte_input)
+                except ValueError:
+                    print("Error! FTE must be a number!")
+                    continue
+
+                new_allocation = 
+
+            except Exception as e:
+                self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: ' \
+                                    f'{e}')
+
+
     def start(self):
         """Start main user interface."""
         while True:
