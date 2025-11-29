@@ -16,6 +16,7 @@ class AppServices(ApplicationBase):
         self.DB = MySQLPersistenceWrapper(config)
         self._logger.log_debug(f'{inspect.currentframe().f_code.co_name}:It works!')
 
+
     def get_all_employees(self)->list:
         """Returns a list of employees from the persistence layer."""
         try:
@@ -24,6 +25,7 @@ class AppServices(ApplicationBase):
 
         except Exception as e:
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
 
     def get_all_projects(self)->list:
         """Returns a list of projects from the persistence layer."""
@@ -34,6 +36,7 @@ class AppServices(ApplicationBase):
         except Exception as e:
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
+
     def get_all_assignments(self)->list:
         """Returns a list of project allcoations from the persistence layer."""
         try:
@@ -42,6 +45,7 @@ class AppServices(ApplicationBase):
          
         except Exception as e:
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
 
     def get_employees_assigned_projects(self)->list:
         """Returns a list of all employees and assigned projects from the persistence layer."""
@@ -52,6 +56,7 @@ class AppServices(ApplicationBase):
         except Exception as e:
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
+
     def get_all_employees_as_json(self)->str:
             """Returns a list of employees from the persistence layer in JSON."""
             try:
@@ -60,6 +65,7 @@ class AppServices(ApplicationBase):
 
             except Exception as e:
                 self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
 
     def get_all_projects_as_json(self)->str:
             """Returns a list of employees from the persistence layer in JSON."""
@@ -70,6 +76,7 @@ class AppServices(ApplicationBase):
             except Exception as e:
                 self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
+
     def get_all_assignments_as_json(self)->str:
             """Returns a list of project allocations from the persistence layer in JSON."""
             try:
@@ -78,6 +85,7 @@ class AppServices(ApplicationBase):
 
             except Exception as e:
                 self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
+
 
     def get_employees_assigned_projects_as_json(self)->str:
             """Returns a list of all employees and assigned projects from the persistence layer in JSON."""
@@ -88,11 +96,22 @@ class AppServices(ApplicationBase):
             except Exception as e:
                 self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
-    def create_employee(self)->list:
+
+    def create_employee(self, first_name, last_name, birthday, gender): #->list:
         """Create a new employee in the database"""
         self._logger.log_debug(f'In {inspect.currentframe().f_code.co_name}()...')
         try:
-            results = self.DB.create_employee()
-            return json.dumps(results)
+            new_employee = self.DB.create_employee(first_name, last_name, birthday, gender)
+            return new_employee
+        except Exception as e: 
+            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}:{e}')
+
+
+    def create_project(self, project_title, total_hours, total_fte, status):
+        """Create a new project in the database"""
+        self._logger.log_debug(f'In {inspect.currentframe().f_code.co_name}()...')
+        try:
+            new_project = self.DB.create_project(project_title, total_hours, total_fte, status)  
+            return new_project
         except Exception as e: 
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}:{e}')

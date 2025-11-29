@@ -29,7 +29,8 @@ class UserInterface(ApplicationBase):
         print(f'\t3.List project assignments')
         print(f'\t4.List all employees and assigned projects')
         print(f'\t5.Add new employee')
-        print(f'\t6.Exit')
+        print(f'\t6.Add new project')
+        print(f'\t7.Exit')
 
     # Choices for menu selections. #
     def process_menu_choice(self):
@@ -40,7 +41,8 @@ class UserInterface(ApplicationBase):
             case '3':self.list_assignments()
             case '4':self.list_employees_assigned_projects()
             case '5':self.add_employee()
-            case '6':sys.exit()
+            case '6':self.add_project()
+            case '7':sys.exit()
             case _: print(f'Invalid menu choice item: {menu_choice[0]}')
 
     # List all the employees in a table format. #
@@ -97,17 +99,67 @@ class UserInterface(ApplicationBase):
         """Add employee"""
         print("\n\tAdd Employee...")
         try: 
-            employee = self.DB.create_employee()
-            employee.first_name = input('First Name: ')
-            employee.last_name = input('Last Name: ')
+            first_name = input('First Name: ')
+            last_name = input('Last Name: ')
             birthday_input = input('Birthday (mm/dd/yyy): ')
-            employee.birthday = datetime.strptime(birthday_input, '%m/%d/%Y')
-            employee.gender = input('Gender (M/F): ')
+            birthday = datetime.strptime(birthday_input, '%m/%d/%Y')
+            gender = input('Gender (M/F): ')
 
+            new_employee = self.DB.create_employee(first_name, last_name, birthday, gender)
 
+            if new_employee:
+                print(f'\nNew Employee added sucessfully with ID: {new_employee}')
+            else:
+                print(f'\nFailed to add new employee.')
         except Exception as e:
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: ' \
                                 f'{e}')
+            
+    def add_project(self)->None:
+        """Add project"""
+        while True:
+            print("\n\tAdd Project...")
+            try:
+                project_title = input('Project Title: ').strip()
+                if not project_title:
+                    print('Project Title cannot be empty.')
+                    continue
+                
+                # Total Hours to be numbers only
+                total_hours_input = input('Total Hours: ').strip()
+                try:
+                    total_hours = float(total_hours_input)
+                except ValueError:
+                    print("Error! Total Hours must be a number.")
+                    continue 
+                
+                # Total FTE to be numbers only
+                total_fte_input = input('Total FTE: ').strip()
+                try:
+                    total_fte = float(total_fte_input)
+                except ValueError:
+                    print("Error! Total FTE must be a number.")
+                    continue 
+
+                status = input('Status: ').strip()
+                if not status:
+                    print("Status cannot be empty.")
+                    continue
+
+                new_project = self.DB.create_project(project_title, total_hours, total_fte, status)
+                if new_project:
+                    print(f'\nA new project has been created, ID: {new_project}')
+                else:
+                    print('\nFailed to create a new project.')
+
+                break
+            except Exception as e:
+                self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: ' \
+                                    f'{e}')
+                #print('Error! Try again!')
+                #continue
+
+    
     def start(self):
         """Start main user interface."""
         while True:

@@ -1,0 +1,26 @@
+DEBUG:UserInterface:2025-11-28 08:58:06,606:__init__:It works!
+ERROR:UserInterface:2025-11-28 08:58:12,269:start: User interface started!
+DEBUG:AppServices:2025-11-28 08:58:13,437:In create_employee()...
+ERROR:MySQLPersistenceWrapper:2025-11-28 08:58:13,440:create_employee: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s)' at line 1
+ERROR:UserInterface:2025-11-28 08:58:17,947:add_employee: 'str' object has no attribute 'first_name' and no __dict__ for setting new attributes
+ERROR:UserInterface:2025-11-28 08:58:17,950:start: User interface started!
+DEBUG:MySQLPersistenceWrapper:2025-11-28 23:22:46,441:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-28 23:22:46,442:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
+DEBUG:MySQLPersistenceWrapper:2025-11-28 23:22:46,442:Creating connection pool...
+DEBUG:MySQLPersistenceWrapper:2025-11-28 23:22:46,514:_initialize_database_connection_pool: Connection pool successfully created!
+DEBUG:AppServices:2025-11-28 23:22:46,515:__init__:It works!
+DEBUG:UserInterface:2025-11-28 23:22:46,515:__init__:It works!
+ERROR:UserInterface:2025-11-28 23:22:49,679:start: User interface started!
+DEBUG:AppServices:2025-11-28 23:22:50,389:In create_employee()...
+ERROR:MySQLPersistenceWrapper:2025-11-28 23:22:50,390:create_employee: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s)' at line 1
+ERROR:UserInterface:2025-11-28 23:22:53,061:add_employee: 'str' object has no attribute 'first_name' and no __dict__ for setting new attributes
+ERROR:UserInterface:2025-11-28 23:22:53,061:start: User interface started!
+DEBUG:MySQLPersistenceWrapper:2025-11-28 23:42:14,067:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-28 23:42:14,068:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
+DEBUG:MySQLPersistenceWrapper:2025-11-28 23:42:14,068:Creating connection pool...
+DEBUG:MySQLPersistenceWrapper:2025-11-28 23:42:14,140:_initialize_database_connection_pool: Connection pool successfully created!
+DEBUG:AppServices:2025-11-28 23:42:14,141:__init__:It works!
+DEBUG:UserInterface:2025-11-28 23:42:14,141:__init__:It works!
+DEBUG:AppServices:2025-11-28 23:44:32,326:In create_employee()...
+ERROR:UserInterface:2025-11-28 23:44:32,345:start: User interface started!
+ERROR:UserInterface:2025-11-28 23:44:37,168:start: User interface started!

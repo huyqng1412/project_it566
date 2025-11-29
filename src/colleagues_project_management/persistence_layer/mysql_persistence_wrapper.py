@@ -148,27 +148,48 @@ class MySQLPersistenceWrapper(ApplicationBase):
 
 
 
-	def create_employee(self)->List:
-		"""Create a new record in the employees table"""
+	def create_employee(self, first_name, last_name, birthday, gender): #->List:
+		"""Create a new record in the employees table."""
 		cursor = None
-		results = None
+		
 		try: 
 			connection = self._connection_pool.get_connection()
 			with connection:
 				cursor = connection.cursor()
 				with cursor:
-					cursor.execute(self.INSERT_EMPLOYEE)
-					results = cursor.fetchall()
-					#connection.commit()
+					cursor.execute(
+						self.INSERT_EMPLOYEE,
+						(first_name, last_name, birthday, gender)
+					)				
+					connection.commit()
 					#self._logger.log_debug(f'Updated {cursor.rowcount} row.')
 					#self._logger.log_debug(f'Last Row ID: {cursor.lastrowid}.')
-					#employee.id = cursor.lastrowid
-			return results
-			#return employee
+					new_id = cursor.lastrowid
+			return new_id
 		
 		except Exception as e: 
 			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
 
+
+	def create_project(self, project_title, total_hours, total_fte, status):
+		"""Create a new record in the projects table."""
+		cursor = None
+
+		try:
+			connection = self._connection_pool.get_connection()
+			with connection:
+				cursor = connection.cursor()
+				with cursor:
+					cursor.execute(
+						self.INSERT_PROJECT,
+						(project_title, total_hours, total_fte, status)
+					)
+					connection.commit()
+					new_id = cursor.lastrowid
+			return new_id
+
+		except Exception as e: 
+			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
 
 		##### Private Utility Methods #####
 

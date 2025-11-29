@@ -1,6 +1,5 @@
-DEBUG:UserInterface:2025-11-28 08:58:06,606:__init__:It works!
-ERROR:UserInterface:2025-11-28 08:58:12,269:start: User interface started!
-DEBUG:AppServices:2025-11-28 08:58:13,437:In create_employee()...
-ERROR:MySQLPersistenceWrapper:2025-11-28 08:58:13,440:create_employee: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s)' at line 1
-ERROR:UserInterface:2025-11-28 08:58:17,947:add_employee: 'str' object has no attribute 'first_name' and no __dict__ for setting new attributes
-ERROR:UserInterface:2025-11-28 08:58:17,950:start: User interface started!
+DEBUG:UserInterface:2025-11-29 00:32:33,514:__init__:It works!
+DEBUG:AppServices:2025-11-29 00:37:26,147:In create_project()...
+ERROR:UserInterface:2025-11-29 00:37:26,154:start: User interface started!
+ERROR:UserInterface:2025-11-29 00:37:31,958:start: User interface started!
+ERROR:UserInterface:2025-11-29 00:38:01,343:start: User interface started!
