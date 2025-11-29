@@ -30,7 +30,8 @@ class UserInterface(ApplicationBase):
         print(f'\t4.List all employees and assigned projects')
         print(f'\t5.Add new employee')
         print(f'\t6.Add new project')
-        print(f'\t7.Exit')
+        print(f'\t7.Assign a project to an employee')
+        print(f'\t8.Exit')
 
     # Choices for menu selections. #
     def process_menu_choice(self):
@@ -42,7 +43,8 @@ class UserInterface(ApplicationBase):
             case '4':self.list_employees_assigned_projects()
             case '5':self.add_employee()
             case '6':self.add_project()
-            case '7':sys.exit()
+            case '7':self.add_allocation()
+            case '8':sys.exit()
             case _: print(f'Invalid menu choice item: {menu_choice[0]}')
 
     # List all the employees in a table format. #
@@ -178,15 +180,21 @@ class UserInterface(ApplicationBase):
                     print("Error! Employee ID must be a number!")
                     continue
 
-                assigned_fte_input = input("FTE: ")
+                assigned_fte_input = input("FTE: ").strip()
                 try:
                     assigned_fte = float(assigned_fte_input)
                 except ValueError:
                     print("Error! FTE must be a number!")
                     continue
 
-                new_allocation = 
-
+                new_allocation = self.DB.create_allocation(project_id, employee_id, assigned_fte)
+                if new_allocation:
+                    print(f'\nProject successfully assigned to employee.')
+                else:
+                    print(f'\nFailed to assign project to employee!')
+                
+                break
+            
             except Exception as e:
                 self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: ' \
                                     f'{e}')
