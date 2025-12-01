@@ -122,6 +122,6 @@ class AppServices(ApplicationBase):
         self._logger.log_debug((f'In {inspect.currentframe().f_code.co_name}()...'))
         try:
             new_allocation = self.DB.create_allocation(project_id, employee_id, assigned_fte)
-            return new_allocation
+            return json.dumps(new_allocation)
         except Exception as e: 
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}:{e}')

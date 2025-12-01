@@ -1,0 +1,37 @@
+DEBUG:UserInterface:2025-11-29 00:32:33,514:__init__:It works!
+DEBUG:AppServices:2025-11-29 00:37:26,147:In create_project()...
+ERROR:UserInterface:2025-11-29 00:37:26,154:start: User interface started!
+ERROR:UserInterface:2025-11-29 00:37:31,958:start: User interface started!
+ERROR:UserInterface:2025-11-29 00:38:01,343:start: User interface started!
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:27:28,077:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:27:28,078:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:27:28,079:Creating connection pool...
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:27:28,239:_initialize_database_connection_pool: Connection pool successfully created!
+DEBUG:AppServices:2025-11-29 16:27:28,239:__init__:It works!
+DEBUG:UserInterface:2025-11-29 16:27:28,239:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:28:57,284:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:28:57,285:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:28:57,285:Creating connection pool...
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:28:57,441:_initialize_database_connection_pool: Connection pool successfully created!
+DEBUG:AppServices:2025-11-29 16:28:57,442:__init__:It works!
+DEBUG:UserInterface:2025-11-29 16:28:57,442:__init__:It works!
+DEBUG:AppServices:2025-11-29 16:29:30,564:In create_allocation()...
+ERROR:UserInterface:2025-11-29 16:29:30,593:start: User interface started!
+ERROR:UserInterface:2025-11-29 16:29:49,775:start: User interface started!
+ERROR:UserInterface:2025-11-29 16:29:54,525:start: User interface started!
+ERROR:UserInterface:2025-11-29 16:34:11,602:start: User interface started!
+ERROR:UserInterface:2025-11-29 16:34:16,770:start: User interface started!
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:44:19,229:__init__:It works!
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:44:19,230:__init__: DB Connection Config Dict: {'database': 'project_management', 'user': 'project_management_user', 'host': 'localhost', 'port': 3306}
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:44:19,230:Creating connection pool...
+DEBUG:MySQLPersistenceWrapper:2025-11-29 16:44:19,373:_initialize_database_connection_pool: Connection pool successfully created!
+DEBUG:AppServices:2025-11-29 16:44:19,373:__init__:It works!
+DEBUG:UserInterface:2025-11-29 16:44:19,374:__init__:It works!
+ERROR:UserInterface:2025-11-29 16:44:23,083:start: User interface started!
+ERROR:UserInterface:2025-11-29 16:44:24,699:start: User interface started!
+DEBUG:AppServices:2025-11-29 16:45:10,880:In create_employee()...
+ERROR:UserInterface:2025-11-29 16:45:10,899:start: User interface started!
+DEBUG:AppServices:2025-11-29 16:45:40,452:In create_allocation()...
+ERROR:UserInterface:2025-11-29 16:45:40,471:start: User interface started!
+ERROR:UserInterface:2025-11-29 16:50:27,938:start: User interface started!
+ERROR:UserInterface:2025-11-29 16:50:37,808:start: User interface started!

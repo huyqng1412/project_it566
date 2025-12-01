@@ -207,7 +207,7 @@ class MySQLPersistenceWrapper(ApplicationBase):
 					)
 					connection.commit()
 					new_allocation = cursor.lastrowid
-			return new_allocation
+				return new_allocation
 
 		except Exception as e: 
 			self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: {e}')
