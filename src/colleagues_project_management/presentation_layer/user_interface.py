@@ -60,6 +60,7 @@ class UserInterface(ApplicationBase):
         except Exception as e:
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
+    # List all the projects in a table format. #    
     def list_projects(self):
         try:
             results1 = self.DB.get_all_projects()
@@ -72,6 +73,7 @@ class UserInterface(ApplicationBase):
         except Exception as e:
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
+    # List all the projects and number of employees work on each in a table format. #
     def list_assignments(self):
         try:
             results2 = self.DB.get_all_assignments()
@@ -84,45 +86,56 @@ class UserInterface(ApplicationBase):
         except Exception as e:
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
+    # List all the employees' name, projects, total FTE required for all the projects they work on, 
+    # and the total FTE they were assigned for all the projects in a table format. #
     def list_employees_assigned_projects(self):
         try:
             results3 = self.DB.get_employees_assigned_projects()
             table = PrettyTable()
-            table.field_names = ['First Name', 'Last Name', 'Assigned Projects']
+            table.field_names = ['First Name', 'Last Name', 'Assigned Projects', 'Total Project FTE', 'Total Employee FTE']
             for row in results3:
-                table.add_row([row[0], row[1], row[2]])
-                table.add_row(["", "", ""])
-                table.add_row(["", "", ""])
+                table.add_row([row[0], row[1], row[2], row[3], row[4]])
+                table.add_row(["", "", "", "", ""])
+                table.add_row(["", "", "", "", ""])
             print(table)
         except Exception as e: 
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
 
+    # Add a new employee to the project. #
     def add_employee(self)->None:
         """Add employee"""
-        print("\n\tAdd Employee...")
-        try: 
-            first_name = input('First Name: ')
-            last_name = input('Last Name: ')
-            birthday_input = input('Birthday (mm/dd/yyy): ')
-            birthday = datetime.strptime(birthday_input, '%m/%d/%Y')
-            gender = input('Gender (M/F): ')
+        while True:
+            print("\n\tAdd Employee...")
+            try: 
+                first_name = input('First Name: ').strip().title()
+                last_name = input('Last Name: ').strip().title()
+                birthday_input = input('Birthday (mm/dd/yyy): ').strip().title()
+                birthday = datetime.strptime(birthday_input, '%m/%d/%Y')
+                gender = input('Gender (M/F): ').strip().upper()
+ 
+                if gender not in ["M", "F"]:
+                    print("Please enter either ""M ""for Male or " "F ""for Female!")
+                    continue
 
-            new_employee = self.DB.create_employee(first_name, last_name, birthday, gender)
+                new_employee = self.DB.create_employee(first_name, last_name, birthday, gender)
 
-            if new_employee:
-                print(f'\nNew Employee added sucessfully with ID: {new_employee}')
-            else:
-                print(f'\nFailed to add new employee.')
-        except Exception as e:
-            self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: ' \
-                                f'{e}')
-            
+                if new_employee:
+                    print(f'\nNew Employee added sucessfully with ID: {new_employee}')
+                else:
+                    print(f'\nFailed to add new employee.')
+
+                break
+            except Exception as e:
+                self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: ' \
+                                    f'{e}')
+
+    # Add a new project to the database. #
     def add_project(self)->None:
         """Add project"""
         while True:
             print("\n\tAdd Project...")
             try:
-                project_title = input('Project Title: ').strip()
+                project_title = input('Project Title: ').strip().title()
                 if not project_title:
                     print('Project Title cannot be empty.')
                     continue
@@ -143,9 +156,10 @@ class UserInterface(ApplicationBase):
                     print("Error! Total FTE must be a number.")
                     continue 
 
-                status = input('Status: ').strip()
-                if not status:
-                    print("Status cannot be empty.")
+                status = input('Status (Done/In Progress): ').strip().title()
+                status_list = ["Done", "In Progress", "done", "in progress"]
+                if status not in status_list:
+                    print("Status not eligible!")
                     continue
 
                 new_project = self.DB.create_project(project_title, total_hours, total_fte, status)
@@ -158,9 +172,8 @@ class UserInterface(ApplicationBase):
             except Exception as e:
                 self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: ' \
                                     f'{e}')
-                #print('Error! Try again!')
-                #continue
 
+    # Assign a project to an employee and record it to the database. #
     def add_allocation(self)->None:
         """Add allocation"""
         while True:

@@ -49,7 +49,7 @@ def main():
 		print(f'{app_services.get_all_assignments_as_json()}')
 
 	for row in results3:
-		print(f'{row[0]} {row[1]} {row[2]}')
+		print(f'{row[0]} {row[1]} {row[2]} {row[3]} {row[4]}')
 
 		print(f'{app_services.get_employees_assigned_projects_as_json()}')
 

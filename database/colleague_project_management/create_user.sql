@@ -1,9 +1,7 @@
 /* ****************************************
-Drop and create the project_management_user
+Create the project_management_user
 **************************************** */
 
--- Drop user if exists
-DROP USER IF EXISTS 'project_management_user'@'%';
 
 -- Create user if not exists
 CREATE USER IF NOT EXISTS 'project_management_user'@'%';
