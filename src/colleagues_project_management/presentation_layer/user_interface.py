@@ -109,7 +109,7 @@ class UserInterface(ApplicationBase):
             try: 
                 first_name = input('First Name: ').strip().title()
                 last_name = input('Last Name: ').strip().title()
-                birthday_input = input('Birthday (mm/dd/yyy): ').strip().title()
+                birthday_input = input('Birthday (mm/dd/yyy): ').strip()
                 birthday = datetime.strptime(birthday_input, '%m/%d/%Y')
                 gender = input('Gender (M/F): ').strip().upper()
  
@@ -135,7 +135,7 @@ class UserInterface(ApplicationBase):
         while True:
             print("\n\tAdd Project...")
             try:
-                project_title = input('Project Title: ').strip().title()
+                project_title = input('Project Title: ').strip()
                 if not project_title:
                     print('Project Title cannot be empty.')
                     continue
