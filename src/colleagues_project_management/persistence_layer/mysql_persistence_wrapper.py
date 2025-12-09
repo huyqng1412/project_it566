@@ -52,7 +52,7 @@ class MySQLPersistenceWrapper(ApplicationBase):
 			f'ORDER BY p.project_name' 
 		
 		self.SELECT_EMPLOYEES_ASSIGNED_PROJECTS = \
-			f"SELECT e.first_name, e.last_name, GROUP_CONCAT('   • ', p.project_name SEPARATOR '\n'), SUM(p.total_fte), SUM(pa.assigned_fte) " \
+			f"SELECT e.first_name, e.last_name, GROUP_CONCAT('   • ', p.project_name SEPARATOR '\n'), SUM(p.total_fte), SUM(pa.assigned_fte), round((SUM(pa.assigned_fte)/SUM(p.total_fte))*100, 1) " \
 			f"FROM project_allocations pa " \
 			f"INNER JOIN employee e ON e.employee_id = pa.employee_id " \
 			f"INNER JOIN project p ON p.project_id = pa.project_id " \

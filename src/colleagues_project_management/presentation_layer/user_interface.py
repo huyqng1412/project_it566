@@ -92,11 +92,11 @@ class UserInterface(ApplicationBase):
         try:
             results3 = self.DB.get_employees_assigned_projects()
             table = PrettyTable()
-            table.field_names = ['First Name', 'Last Name', 'Assigned Projects', 'Total Project FTE', 'Total Employee FTE']
+            table.field_names = ['First Name', 'Last Name', 'Assigned Projects', 'Total Project FTE', 'Total Employee FTE', "% FTE"]
             for row in results3:
-                table.add_row([row[0], row[1], row[2], row[3], row[4]])
-                table.add_row(["", "", "", "", ""])
-                table.add_row(["", "", "", "", ""])
+                table.add_row([row[0], row[1], row[2], row[3], row[4], row[5]])
+                table.add_row(["", "", "", "", "", ""])
+                table.add_row(["", "", "", "", "", ""])
             print(table)
         except Exception as e: 
             self._logger.log_error(f'{inspect.currentframe().f_code.co_name}: It works!')
