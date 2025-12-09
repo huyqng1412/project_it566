@@ -15,17 +15,9 @@ def main():
 		with open(args.configfile, 'r') as f:
 			config = json.loads(f.read())
 
-		#service_layer = AppServices(config)
-		#employees_list = service_layer.get_all_employees_as_json()
-		#print(employees_list)
 	
 	ui = UserInterface(config)
 	ui.start()
-
-	### Returns all the employees information as a list (but it looks horrible).###
-	#db = MySQLPersistenceWrapper(config)
-	#results = db.select_all_employees()
-	#print(results)	
 
 	### Returns all employees in rows that looks cleaner! ###
 	app_services = AppServices(config)
